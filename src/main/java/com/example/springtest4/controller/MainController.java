@@ -18,9 +18,7 @@ public class MainController {
     @RequestMapping("/")
     public String index(Model model) {
         List<Item> allItems = itemRepository.findAll();
-        //List<String> allItemNames = new ArrayList<>();
         model.addAttribute("allItems", allItems);
-        model.addAttribute("items", itemRepository.findAll());
         return "index";
     }
 }

@@ -13,9 +13,8 @@ public class Item {
     private int id;
     private String name;
     private String info;
-    private int einheit;
     private double kalorienProEinheit;
-    private int typ_id;
+    private int typId;
 
 
     public int getId() {
@@ -42,14 +41,6 @@ public class Item {
         this.info = info;
     }
 
-    public int getEinheit() {
-        return einheit;
-    }
-
-    public void setEinheit(int einheit) {
-        this.einheit = einheit;
-    }
-
     public double getKalorienProEinheit() {
         return kalorienProEinheit;
     }
@@ -58,12 +49,12 @@ public class Item {
         this.kalorienProEinheit = kalorienProEinheit;
     }
 
-    public int getTyp_id() {
-        return typ_id;
+    public int getTypId() {
+        return typId;
     }
 
-    public void setTyp_id(int typ_id) {
-        this.typ_id = typ_id;
+    public void setTypId(int typId) {
+        this.typId = typId;
     }
 
 
