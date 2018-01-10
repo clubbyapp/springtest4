@@ -1,9 +1,6 @@
 package com.example.springtest4.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -12,8 +9,10 @@ public class Eintraege {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int item_id;
-    private int einheit;
+    @ManyToOne
+    @JoinColumn(name = "item_id")
+    private Item item;
+    private double menge;
     private Date zeitpunkt;
 
 
@@ -25,20 +24,20 @@ public class Eintraege {
         this.id = id;
     }
 
-    public int getItem_id() {
-        return item_id;
+    public Item getItem() {
+        return item;
     }
 
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
-    public int getEinheit() {
-        return einheit;
+    public double getMenge() {
+        return menge;
     }
 
-    public void setEinheit(int einheit) {
-        this.einheit = einheit;
+    public void setMenge(double menge) {
+        this.menge = menge;
     }
 
     public Date getZeitpunkt() {

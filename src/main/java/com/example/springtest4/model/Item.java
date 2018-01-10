@@ -1,9 +1,7 @@
 package com.example.springtest4.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Item {
@@ -15,7 +13,8 @@ public class Item {
     private String info;
     private double kalorienProEinheit;
     private int typId;
-
+    @OneToMany(mappedBy = "item")
+    private Set<Eintraege> eintraege;
 
     public int getId() {
         return id;
@@ -57,5 +56,11 @@ public class Item {
         this.typId = typId;
     }
 
+    public Set<Eintraege> getEintraege() {
+        return eintraege;
+    }
 
+    public void setEintraege(Set<Eintraege> eintraege) {
+        this.eintraege = eintraege;
+    }
 }
