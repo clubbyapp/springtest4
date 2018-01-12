@@ -15,14 +15,14 @@
         2000 kcal max.
         <button type="button" class="btn btn-default btn-sm">&Auml;ndern</button>
     </p>
-    <form >
+    <form action="#" th:action="@{/save}" th:object="${entryDto}" method="post">
         <div class="form-row">
             <label for="tabellenEintrag" class="xcol-form-label">+</label>
             <div class="form-group col-md-5">
-                <input type="text" class="form-control" id="tabellenEintrag" placeholder="Lebensmittel oder Sport"/>
+                <input type="text" th:field="*{name}" class="form-control" id="tabellenEintrag" placeholder="Lebensmittel oder Sport"/>
             </div>
             <div class="form-group col-md-3">
-                <input type="text" class="form-control" id="menge" placeholder="Menge"/>
+                <input type="text" th:field="*{menge}" class="form-control" id="menge" placeholder="Menge"/>
             </div>
             <div class="form-group col-md-2">
                 <button type="submit" class="btn btn-primary">Hinzuf&uuml;gen</button>
